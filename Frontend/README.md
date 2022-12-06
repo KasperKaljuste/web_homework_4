@@ -1,13 +1,28 @@
-# wad2022-lab13-fr
+# Lec14-testing-cypress
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Database info
+```
+Complete the information related to your database (db name, password) in the database.js file that is in the ../server directory
+```
+
+### Run the Back-end
+```
+npm run server
+```
+
+### Run the Front-End with hot reload
 ```
 npm run serve
+```
+
+### Open Cypress 
+```
+npx cypress open
 ```
 
 ### Compiles and minifies for production

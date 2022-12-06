@@ -1,52 +1,53 @@
 <template>
   <div class="form">
-    <h3>LogIn</h3>
-    <label for="email">Email</label>
-    <input type="email" name="email"  required v-model="email">
-    <label for="password">Password</label>
-    <input type="password" name="password" required v-model="password">
-    <div class="container">
-      <button @click="LogIn"  class="center">LogIn</button>
-      <button @click='this.$router.push("/api/signup")' class="center">Signup</button>
-    </div>
+    <h3>Add a Post</h3>
+    <label for="title">Title: </label>
+    <input name="title" type="text" id="title" required v-model="post.title" />
+    <label for="body">Body: </label>
+    <input name="body" type="text" id="body" required v-model="post.body" />
+    <label for="urllink">Url: </label>
+    <input name="urllink"  type="text" id="urllink" required v-model="post.urllink"/>
+    <button @click="addPost" class="addPost">Add Post</button>
   </div>
 </template>
 
 <script>
 export default {
-name: "LogIn", 
-data: function() {
+  name: "AddPost",
+  data() {
     return {
-   email: '',
-   password: '',
-  }
+      post: {
+        title: "",
+        body: "",
+        urllink: "",
+      },
+    };
   },
   methods: {
-LogIn() {
+    addPost() {
       var data = {
-        email: this.email,
-        password: this.password
+        title: this.post.title,
+        body: this.post.body,
+        urllink: this.post.urllink,
       };
-      fetch("http://localhost:3000/auth/login", {
+      fetch("http://localhost:3000/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-          credentials: 'include', 
-          body: JSON.stringify(data),
+        body: JSON.stringify(data),
       })
-      .then((response) => response.json())
-      .then((data) => {
-      console.log(data);
-      location.assign("/");
+      .then((response) => {
+        console.log(response.data);
+        this.$router.push("/api/allposts");
       })
       .catch((e) => {
         console.log(e);
         console.log("error");
       });
     },
-  }, 
-  }
+  },
+};
 </script>
 
 <style scoped>
@@ -84,21 +85,10 @@ button {
   background: rgb(8, 110, 110);
   border: 0;
   padding: 10px 20px;
-  margin: 20px 20px 20px 20px;
+  margin-top: 20px;
   color: white;
   border-radius: 20px;
   align-items: center;
   text-align: center;
-}
-.center {
-  margin: auto;
-  border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
-  width: 30%; 
-}
-.container {
-  display: flex;
-  justify-content: center;
 }
 </style>
