@@ -4,8 +4,9 @@
     <nav>
       <router-link to="/api/allposts">Posts</router-link> |
       <router-link to="/api/addpost">Add a Post</router-link> |
-      <router-link to="/api/signup">SignUp</router-link>|
-      <router-link to="/api/login">Login</router-link>
+      <router-link to="/api/signup">SignUp</router-link> |
+      <router-link to="/api/login">Login</router-link> |
+      <router-link to="/api/contactus">Contact Us</router-link>
     </nav>
     <router-view />
   
