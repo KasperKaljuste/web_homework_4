@@ -8,7 +8,7 @@
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
           <a class='singlepost' :href="'/apost/' + post.id">
-            <span class="date"> <b></b> {{ new Date(post.date).getFullYear() }} </span><br />
+            <span class="date"> <b></b> {{ post.date }} </span><br />
             <span class="body"> <b></b> {{ post.body }} </span> <br />
           </a>
         </div>

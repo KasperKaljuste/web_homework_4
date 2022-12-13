@@ -19,8 +19,11 @@ export default {
   },
   methods: {
     addPost() {
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let date = new Date();
+      let dateString = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
       var data = {
-        date: new Date(),
+        date: dateString,
         body: this.post.body,
       };
       fetch("http://localhost:3000/api/posts", {
