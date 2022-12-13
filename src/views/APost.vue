@@ -20,7 +20,6 @@ export default {
     return {
       post: {
         id: "",
-        date: "",
         body: "",
       },
     };
