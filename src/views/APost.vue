@@ -3,7 +3,7 @@
     <div id="form">
       <h3>A Post</h3>
       <label for="body">Body: </label>
-      <input name="body" type="text" id="body" required v-model="post.body" />
+      <textarea name="body" type="text" id="body" required v-model="post.body" rows="6" maxlength="200" />
     </div>
     <div class="container">
       <button @click="updatePost" class="updatePost">Update Post</button>
@@ -68,6 +68,11 @@ export default {
 </script>
 
 <style scoped>
+textarea {
+  resize: none;
+  width: 100%;
+}
+
 #form {
   max-width: 420px;
   margin: 30px auto;
