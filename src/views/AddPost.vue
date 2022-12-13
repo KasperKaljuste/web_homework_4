@@ -2,7 +2,7 @@
   <div class="form">
     <h3>Add a Post</h3>
     <label for="body">Body: </label>
-    <input name="body" type="text" id="body" required v-model="post.body" />
+    <textarea name="body" type="text" id="body" required v-model="post.body" rows="6" maxlength="200" />
     <button @click="addPost" class="addPost">Add Post</button>
   </div>
 </template>
@@ -47,6 +47,11 @@ export default {
 </script>
 
 <style scoped>
+textarea {
+  resize: none;
+  width: 100%;
+}
+
 .form {
   max-width: 420px;
   margin: 30px auto;

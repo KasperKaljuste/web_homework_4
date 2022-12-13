@@ -8,8 +8,8 @@
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
           <a class='singlepost' :href="'/apost/' + post.id">
-            <span class="date"> <b></b> {{ post.date }} </span><br />
-            <span class="body"> <b></b> {{ post.body }} </span> <br />
+            <span class="date"> {{ post.date }} </span><br />
+            <span class="body"> {{ post.body }} </span><br />
           </a>
         </div>
       </ul>
@@ -122,6 +122,8 @@ button:hover {
   margin-bottom: 5px;
   padding: 3px 5px;
   border-radius: 10px;
+  display: block;
+  word-wrap: break-word
 }
 
 #post-list {
