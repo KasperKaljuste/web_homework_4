@@ -1,8 +1,6 @@
 <template>
   <div class="form">
     <h3>Add a Post</h3>
-    <label for="date">Date: </label>
-    <input name="date" type="text" id="date" required v-model="post.date" />
     <label for="body">Body: </label>
     <input name="body" type="text" id="body" required v-model="post.body" />
     <button @click="addPost" class="addPost">Add Post</button>
@@ -15,7 +13,6 @@ export default {
   data() {
     return {
       post: {
-        date: "",
         body: "",
       },
     };
@@ -23,7 +20,7 @@ export default {
   methods: {
     addPost() {
       var data = {
-        date: this.post.date,
+        date: new Date(),
         body: this.post.body,
       };
       fetch("http://localhost:3000/api/posts", {

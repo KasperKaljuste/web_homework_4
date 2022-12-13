@@ -8,18 +8,18 @@
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
           <a class='singlepost' :href="'/apost/' + post.id">
-            <span class="date"> <b>Date:</b> {{ post.date }} </span><br />
+            <span class="date"> <b>Date:</b> {{ new Date(post.date).getFullYear() }} </span><br />
             <span class="body"> <b></b> {{ post.body }} </span> <br />
           </a>
         </div>
       </ul>
       <div class="container">
-        <button   @click='this.$router.push("/AddPost")' class="center">Add post</button>
-        <button   @click="DeleteAll" class="center">Delete all posts</button>
-      
+        <button @click='this.$router.push("/AddPost")' class="center">Add post</button>
+        <button @click="DeleteAll" class="center">Delete all posts</button>
+
       </div>
     </div>
-    
+
   </div>
 </template>
 
@@ -86,9 +86,10 @@ export default {
 </script>
 
 <style scoped>
-.center{
+.center {
   margin-right: 5px;
 }
+
 h1 {
   font-size: 20px;
 }
@@ -100,10 +101,12 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 button:hover {
-    background-color: rgb(83, 83, 83);
-    cursor: pointer;
+  background-color: rgb(83, 83, 83);
+  cursor: pointer;
 }
+
 .item {
   background: rgb(189, 212, 199);
   margin-bottom: 5px;
