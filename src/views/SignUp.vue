@@ -29,7 +29,7 @@ export default {
   methods: {
     validatePassword(value) {
       if (value.length < 8 || value.length >= 16 || !/[A-Z]/.test(value) || !/[0-9]/.test(value)) {
-        this.errMsg = "Password must be at least 8 characters  and less than 16 characters, it must include a capital letter and at least one number"
+        this.errMsg = "Password should be at least 8 characters  and less than 16 characters, it must include a capital letter and at least one number"
       } else {
         this.errMsg = ''
       }
