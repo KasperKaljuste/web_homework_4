@@ -48,10 +48,10 @@ const routes = [
     component: ContactUs,
   },
   {
-    //will route to AllPosts view if none of the previous routes apply
+    //will route to ContactUs view if none of the previous routes apply
     path: "/:catchAll(.*)",
-    name: "AllPosts",
-    component: AllPosts,
+    name: "ContactUs",
+    component: ContactUs,
   },
 ];
 

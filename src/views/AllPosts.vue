@@ -7,7 +7,7 @@
       </div>
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
-          <a class='singlepost' :href="'/api/apost/' + post.id">
+          <a class='singlepost' :href="'/apost/' + post.id">
             <span class="date"> <b>Date:</b> {{ post.date }} </span><br />
             <span class="body"> <b></b> {{ post.body }} </span> <br />
           </a>
@@ -19,11 +19,14 @@
 
 
 <script>
+import auth from "../auth";
+
 export default {
   name: "AllPosts",
   data() {
     return {
       posts: [],
+      authResult: auth.authenticated(),
     };
   },
   methods: {
