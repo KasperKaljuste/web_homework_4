@@ -1,7 +1,7 @@
 <template>
-<h3>Ingvar Drikkit</h3>
-<h3>Urmo Schults-Kopp</h3>
-<h3>Kasper Kaljuste</h3>
+  <h3>Ingvar Drikkit</h3>
+  <h3>Urmo Schults-Kopp</h3>
+  <h3>Kasper Kaljuste</h3>
 </template>
 
 <script>
