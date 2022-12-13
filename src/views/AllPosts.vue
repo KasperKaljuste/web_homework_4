@@ -8,7 +8,7 @@
       <ul>
         <div class="item" v-for="post in posts" :key="post.id">
           <a class='singlepost' :href="'/apost/' + post.id">
-            <span class="date"> <b>Date:</b> {{ post.date }} </span><br />
+            <span class="date"> <b></b> {{ post.date }} </span><br />
             <span class="body"> <b></b> {{ post.body }} </span> <br />
           </a>
         </div>
@@ -88,6 +88,14 @@ export default {
 <style scoped>
 .center{
   margin-right: 5px;
+}
+.date{
+  margin-left: auto;
+  margin-right: 5px;
+}
+.singlepost{
+  display: flex;
+  flex-direction: column;
 }
 h1 {
   font-size: 20px;
