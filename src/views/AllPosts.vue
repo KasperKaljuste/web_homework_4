@@ -122,8 +122,11 @@ button:hover {
   margin-bottom: 5px;
   padding: 3px 5px;
   border-radius: 10px;
+  text-align: justify;
   display: block;
-  word-wrap: break-word
+  word-wrap: break-word;
+  
+  
 }
 
 #post-list {
