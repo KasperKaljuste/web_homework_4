@@ -13,7 +13,13 @@
           </a>
         </div>
       </ul>
+      <div class="container">
+        <button   @click="AddPost" class="center">Add post</button>
+        <button   @click="DeleteAll" class="center">Delete all posts</button>
+      
+      </div>
     </div>
+    
   </div>
 </template>
 
@@ -33,6 +39,24 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
+
+    DeleteAll() {
+      fetch(`http://localhost:3000/api/posts`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          console.log(response.data);
+          this.fetchPosts();
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+      console.log("Deleted all posts");
+    }
+
+
+
   },
   mounted() {
     this.fetchPosts();
@@ -42,6 +66,9 @@ export default {
 </script>
 
 <style scoped>
+.center{
+  margin-right: 5px;
+}
 h1 {
   font-size: 20px;
 }
@@ -50,6 +77,10 @@ a {
 }
 a:hover {
   text-decoration: underline;
+}
+button:hover {
+    background-color: rgb(83, 83, 83);
+    cursor: pointer;
 }
 .item {
   background: rgb(189, 212, 199);

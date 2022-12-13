@@ -71,13 +71,25 @@ app.put('/api/posts/:id', async(req, res) => {
         console.error(err.message);
     }
 });
-
 app.delete('/api/posts/:id', async(req, res) => {
     try {
         const { id } = req.params;
         console.log("delete a post request has arrived");
         const deletepost = await pool.query(
             "DELETE FROM posttable WHERE id = $1 RETURNING*", [id]
+        );
+        res.json(deletepost);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+/*-----------------------------------*/
+app.delete('/api/posts', async(req, res) => {
+    try {
+        const { id } = req.params;
+        console.log("delete all posts request has arrived");
+        const deletepost = await pool.query(
+            "DELETE FROM posttable"
         );
         res.json(deletepost);
     } catch (err) {
