@@ -21,7 +21,7 @@ export default {
     addPost() {
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       let date = new Date();
-      let dateString = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear();
+      let dateString = months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
       var data = {
         date: dateString,
         body: this.post.body,
