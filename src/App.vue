@@ -3,7 +3,7 @@
 
     <nav>
       <router-link to="/">Posts</router-link> |
-      <router-link to="/addpost">Add a Post</router-link> |
+      <!--<router-link to="/addpost">Add a Post</router-link> | -->
       <!--<router-link to="/signup">SignUp</router-link> | -->
       <!--<router-link to="/login">Login</router-link> | -->
       <router-link to="/contactus">Contact Us</router-link>

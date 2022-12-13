@@ -14,7 +14,7 @@
         </div>
       </ul>
       <div class="container">
-        <button   @click="AddPost" class="center">Add post</button>
+        <button   @click='this.$router.push("/AddPost")' class="center">Add post</button>
         <button   @click="DeleteAll" class="center">Delete all posts</button>
       
       </div>
